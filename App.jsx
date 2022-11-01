@@ -4,7 +4,7 @@ import PostForm from './components/PostForm'
 import Posts from './components/Posts'
 
 const App = () => { 
-    const [posts, setPosts] = useState([{'name':'replyName', 'text':'replyText', 'replies':[]}])
+    const [posts, setPosts] = useState([])
     const handlePostFormSubmit = (name, text) => {
         console.log('submitted')
         console.log('name',name)
