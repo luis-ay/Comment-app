@@ -5,10 +5,10 @@ const Counter = () => {
     const [likes, setLikes] = useState(0)
 
     return ( 
-        <div style={{backgroundColor:'#6a5acd'}}>
-            <h1>{likes}</h1>
-            <button onClick={() => setLikes(likes + 1)}>Like</button>
-            <button onClick={() => setLikes(likes - 1)}>Dislike</button>
+        <div className='flex-col w-1/4 space-y-2'>
+            <h1 className='text-xl font-bold m-auto'>{likes}</h1>
+            <button onClick={() => setLikes(likes + 1)} className='bg-gray-300 rounded-xl p-2 mr-2'>Up</button>
+            <button onClick={() => setLikes(likes - 1)} className='bg-gray-300 rounded-xl p-2'>Down</button>
         </div>
     ) 
 }

@@ -4,7 +4,7 @@ import PostForm from './components/PostForm'
 import Posts from './components/Posts'
 
 const App = () => { 
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([{'name':'replyName', 'text':'replyText', 'replies':[]}])
     const handlePostFormSubmit = (name, text) => {
         console.log('submitted')
         console.log('name',name)
@@ -26,7 +26,8 @@ const App = () => {
         }
 
     return ( 
-        <div className='bg-black'>
+        <div>
+            <h1 className='text-green-400 text-2xl font-bold ml-4 mt-4'>Comment App</h1>
             <PostForm handlePostSubmit={handlePostFormSubmit}/>
             <Posts posts={posts} handleReply={handleReplyFormSubmit}/>
         </div>

@@ -4,8 +4,8 @@ import Post from './Post'
 
 const Posts = ({posts, handleReply}) => { 
     return ( 
-        <div style={{backgroundColor:'#ffa247', borderRadius:'5px', padding:'2px', margin:'10px'}}>
-            <h1>Posts</h1>
+        <div className='mt-4 ml-6 bg-gray-300 rounded-md w-3/4 p-6'>
+            <h1 className='text-2xl'>Posts</h1>
             {posts.map((postObj,index) => {
                 return (
                     <Post key={index} post={postObj} handleReply={handleReply}/>

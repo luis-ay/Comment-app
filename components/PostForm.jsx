@@ -20,14 +20,18 @@ const PostForm = ({handlePostSubmit}) => {
     }
 
     return (
-        <div>
-            <h1>Add Post</h1> 
+        <div className='w-1/2 flex-col items-center bg-green-400 rounded-md mt-4 p-4 ml-6'>
+            <h1 className='mb-2 text-xl'>Add Post</h1> 
             <form onSubmit={handleSubmit}>
-                <label htmlFor='postName'>Name: </label>
-                <input id='postName' type={'text'} required={true} value={name} onChange={handleNameChange}></input>
-                <label htmlFor='postText'>Post Text: </label>
-                <input id='postText' type={'text'} required={true} value={text} onChange={handleTextChange}></input>
-                <button type='submit'>Submit</button>
+                <div className='mb-2'>
+                    <label htmlFor='postName'>Name: </label>
+                    <input id='postName' type={'text'} required={true} value={name} onChange={handleNameChange} className='rounded-md p-1'></input>
+                </div>
+                <div className='mb-2'>
+                    <label htmlFor='postText'>Post Text: </label>
+                    <input id='postText' type={'text'} required={true} value={text} onChange={handleTextChange} className='rounded-md p-1 w-full'></input>
+                </div>
+                <button type='submit' className=' bg-gray-400 text-white font-medium p-2 rounded-md'>Submit</button>
             </form>
         </div> 
     ) 

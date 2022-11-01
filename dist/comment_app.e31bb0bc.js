@@ -28927,8 +28927,14 @@ var PostForm = function PostForm(_ref) {
     setName('');
     setText('');
   };
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Add Post"), /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "w-1/2 flex-col items-center bg-green-400 rounded-md mt-4 p-4 ml-6"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "mb-2 text-xl"
+  }, "Add Post"), /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: handleSubmit
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "mb-2"
   }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "postName"
   }, "Name: "), /*#__PURE__*/_react.default.createElement("input", {
@@ -28936,17 +28942,22 @@ var PostForm = function PostForm(_ref) {
     type: 'text',
     required: true,
     value: name,
-    onChange: handleNameChange
-  }), /*#__PURE__*/_react.default.createElement("label", {
+    onChange: handleNameChange,
+    className: "rounded-md p-1"
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "mb-2"
+  }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "postText"
   }, "Post Text: "), /*#__PURE__*/_react.default.createElement("input", {
     id: "postText",
     type: 'text',
     required: true,
     value: text,
-    onChange: handleTextChange
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    type: "submit"
+    onChange: handleTextChange,
+    className: "rounded-md p-1 w-full"
+  })), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    className: " bg-gray-400 text-white font-medium p-2 rounded-md"
   }, "Submit")));
 };
 var _default = PostForm;
@@ -28973,18 +28984,20 @@ var Counter = function Counter() {
     likes = _useState2[0],
     setLikes = _useState2[1];
   return /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      backgroundColor: '#6a5acd'
-    }
-  }, /*#__PURE__*/_react.default.createElement("h1", null, likes), /*#__PURE__*/_react.default.createElement("button", {
+    className: "flex-col w-1/4 space-y-2"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "text-xl font-bold m-auto"
+  }, likes), /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
       return setLikes(likes + 1);
-    }
-  }, "Like"), /*#__PURE__*/_react.default.createElement("button", {
+    },
+    className: "bg-gray-300 rounded-xl p-2 mr-2"
+  }, "Up"), /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
       return setLikes(likes - 1);
-    }
-  }, "Dislike"));
+    },
+    className: "bg-gray-300 rounded-xl p-2"
+  }, "Down"));
 };
 var _default = Counter;
 exports.default = _default;
@@ -29014,13 +29027,14 @@ var Post = function Post(_ref) {
   };
   return /*#__PURE__*/_react.default.createElement("div", {
     key: post.name,
-    style: {
-      width: '80%',
-      borderWidth: '4px',
-      borderColor: 'black',
-      border: 'dashed'
-    }
-  }, /*#__PURE__*/_react.default.createElement("h1", null, post.name), /*#__PURE__*/_react.default.createElement("p", null, post.text), /*#__PURE__*/_react.default.createElement(_Counter.default, null), post.replies && /*#__PURE__*/_react.default.createElement(ReplyForm, {
+    className: "border-2 border-gray-500 bg-green-400 rounded-md p-4 my-2"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "text-lg font-semibold"
+  }, post.name), /*#__PURE__*/_react.default.createElement("div", {
+    className: "flex justify-between"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "text-md font-medium mb-4"
+  }, post.text), /*#__PURE__*/_react.default.createElement(_Counter.default, null)), post.replies && /*#__PURE__*/_react.default.createElement(ReplyForm, {
     replySubmit: replySubmit
   }), post.replies && post.replies.map(function (replyObj, index) {
     return /*#__PURE__*/_react.default.createElement(Post, {
@@ -29056,8 +29070,13 @@ var ReplyForm = function ReplyForm(_ref2) {
     setName('');
     setText('');
   };
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Add Comment"), /*#__PURE__*/_react.default.createElement("form", {
-    onSubmit: handleSubmit
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "font-semibold"
+  }, "Add Comment"), /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: handleSubmit,
+    className: "my-2"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "my-2"
   }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "postName"
   }, "Name: "), /*#__PURE__*/_react.default.createElement("input", {
@@ -29065,17 +29084,23 @@ var ReplyForm = function ReplyForm(_ref2) {
     type: 'text',
     required: true,
     value: name,
-    onChange: handleNameChange
-  }), /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "postText"
+    onChange: handleNameChange,
+    className: "rounded-md p-1"
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "my-2"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "postText",
+    className: "ml-2"
   }, "Comment Text: "), /*#__PURE__*/_react.default.createElement("input", {
     id: "postText",
     type: 'text',
     required: true,
     value: text,
-    onChange: handleTextChange
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    type: "submit"
+    onChange: handleTextChange,
+    className: "rounded-md p-1 mb-2"
+  })), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    className: " bg-gray-400 text-white font-medium p-2 rounded-md"
   }, "Submit")));
 };
 var _default = Post;
@@ -29096,13 +29121,10 @@ var Posts = function Posts(_ref) {
   var posts = _ref.posts,
     handleReply = _ref.handleReply;
   return /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      backgroundColor: '#ffa247',
-      borderRadius: '5px',
-      padding: '2px',
-      margin: '10px'
-    }
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Posts"), posts.map(function (postObj, index) {
+    className: "mt-4 ml-6 bg-gray-300 rounded-md w-3/4 p-6"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "text-2xl"
+  }, "Posts"), posts.map(function (postObj, index) {
     return /*#__PURE__*/_react.default.createElement(_Post.default, {
       key: index,
       post: postObj,
@@ -29139,7 +29161,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var App = function App() {
-  var _useState = (0, _react.useState)([]),
+  var _useState = (0, _react.useState)([{
+      'name': 'replyName',
+      'text': 'replyText',
+      'replies': []
+    }]),
     _useState2 = _slicedToArray(_useState, 2),
     posts = _useState2[0],
     setPosts = _useState2[1];
@@ -29178,9 +29204,9 @@ var App = function App() {
       }
     }));
   };
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "bg-black"
-  }, /*#__PURE__*/_react.default.createElement(_PostForm.default, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "text-green-400 text-2xl font-bold ml-4 mt-4"
+  }, "Comment App"), /*#__PURE__*/_react.default.createElement(_PostForm.default, {
     handlePostSubmit: handlePostFormSubmit
   }), /*#__PURE__*/_react.default.createElement(_Posts.default, {
     posts: posts,
@@ -29278,7 +29304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "18004" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "19992" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
